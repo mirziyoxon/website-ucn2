@@ -5,71 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research - The UCN Times</title>
   <link rel="stylesheet" href="research.css">
+  <style>
+    /* Splash Screen */
+    #splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #333;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1.2s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Inline logo style */
+    .logo {
+      font-family: "Brush Script MT", cursive;
+      font-size: 28px;
+      color: #333;
+      text-decoration: none;
+    }
+    .logo:hover {
+      color: #ff6600; /* hover color */
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <nav class="navbar">
-    <div class="nav-left">
-      <a href="https://unicorner.uz" class="logo">Research</a>
-<style>
-.logo {
-  font-family: "Brush Script MT", cursive;
-  font-size: 28px;
-  color: #333;
-  text-decoration: none;
-}
-.logo:hover {
-  color: #ff6600; /* hover color */
-}
-</style>    
-</div>
-    <div class="nav-right">
-      <a href="unicorner.uz">Home</a>
-<a href="https://unicorner.uz/about.html">About</a>
-      <a href="https://book.unicorner.uz">Books</a>
-      <a href="https://article.unicorner.uz">Articles</a>
-      <a href="https://publish.unicorner.uz">Publish</a>
-    </div>
-  </nav>
-</header>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <div class="loader"></div>
+  </div>
 
-<main class="research-list">
-  <h1>Research Papers</h1>
-  <input type="text" id="searchInput" class="search-bar" placeholder="Search research...">
+  <!-- Main Content -->
+  <div id="content" style="display:none;">
+    <header>
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="https://unicorner.uz" class="logo">Research</a>
+        </div>
+        <div class="nav-right">
+          <a href="https://unicorner.uz">Home</a>
+          <a href="https://unicorner.uz/about.html">About</a>
+          <a href="https://book.unicorner.uz">Books</a>
+          <a href="https://article.unicorner.uz">Articles</a>
+          <a href="https://publish.unicorner.uz">Publish</a>
+        </div>
+      </nav>
+    </header>
 
-  <div id="researchContainer">
-    <div class="research-item">
-      <a href="research/cv-19impactsonstudents.pdf" target="_blank">The Impact Of Covid-19 On Students</a>
-      <p>2020 · Medicine · PDF</p>
-    </div>
-    <div class="research-item">
-      <a href="research/introresearchpaper.pdf" target="_blank">Introduction To Research Paper</a>
-      <p>2023 · Scientific · PDF</p>
-    </div>
-    <div class="research-item">
-      <a href="research/mobdevicesforstudy.pdf" target="_blank">Mobile Devices For English Language Study</a>
-      <p>2022 · Subjective · PDF</p>
+    <main class="research-list">
+      <h1>Research Papers</h1>
+      <input type="text" id="searchInput" class="search-bar" placeholder="Search research...">
+
+      <div id="researchContainer">
+        <div class="research-item">
+          <a href="research/cv-19impactsonstudents.pdf" target="_blank">The Impact Of Covid-19 On Students</a>
+          <p>2020 · Medicine · PDF</p>
+        </div>
+        <div class="research-item">
+          <a href="research/introresearchpaper.pdf" target="_blank">Introduction To Research Paper</a>
+          <p>2023 · Scientific · PDF</p>
+        </div>
+        <div class="research-item">
+          <a href="research/mobdevicesforstudy.pdf" target="_blank">Mobile Devices For English Language Study</a>
+          <p>2022 · Subjective · PDF</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="dots">
+      <div class="dot" style="left: 10%; animation-delay: 0s;"></div>
+      <div class="dot" style="left: 25%; animation-delay: 2s;"></div>
+      <div class="dot" style="left: 40%; animation-delay: 4s;"></div>
+      <div class="dot" style="left: 55%; animation-delay: 1s;"></div>
+      <div class="dot" style="left: 70%; animation-delay: 3s;"></div>
+      <div class="dot" style="left: 85%; animation-delay: 5s;"></div>
     </div>
   </div>
-</main>
 
-<script src="research.js"></script>
-
-<div class="dots">
-  <div class="dot" style="left: 10%; animation-delay: 0s;"></div>
-  <div class="dot" style="left: 25%; animation-delay: 2s;"></div>
-  <div class="dot" style="left: 40%; animation-delay: 4s;"></div>
-  <div class="dot" style="left: 55%; animation-delay: 1s;"></div>
-  <div class="dot" style="left: 70%; animation-delay: 3s;"></div>
-  <div class="dot" style="left: 85%; animation-delay: 5s;"></div>
-</div>
-
+  <script src="research.js"></script>
+  <script>
+    // Splash screen logic
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }, 1500); // show splash for 1.5s
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
