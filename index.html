@@ -56,7 +56,15 @@
         <div class="nav-left">
           <a href="https://unicorner.uz" class="logo">Research</a>
         </div>
-        <div class="nav-right">
+
+        <!-- Hamburger button -->
+        <div class="menu-btn" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div class="nav-right" id="navLinks">
           <a href="https://unicorner.uz">Home</a>
           <a href="https://unicorner.uz/about.html">About</a>
           <a href="https://book.unicorner.uz">Books</a>
@@ -85,15 +93,6 @@
         </div>
       </div>
     </main>
-
-    <div class="dots">
-      <div class="dot" style="left: 10%; animation-delay: 0s;"></div>
-      <div class="dot" style="left: 25%; animation-delay: 2s;"></div>
-      <div class="dot" style="left: 40%; animation-delay: 4s;"></div>
-      <div class="dot" style="left: 55%; animation-delay: 1s;"></div>
-      <div class="dot" style="left: 70%; animation-delay: 3s;"></div>
-      <div class="dot" style="left: 85%; animation-delay: 5s;"></div>
-    </div>
   </div>
 
   <script src="research.js"></script>
@@ -103,9 +102,13 @@
       setTimeout(() => {
         document.getElementById("splash").style.display = "none";
         document.getElementById("content").style.display = "block";
-      }, 2000); // show splash for 1.5s
+      }, 2000);
     });
+
+    // Hamburger toggle
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
   </script>
 </body>
 </html>
-
